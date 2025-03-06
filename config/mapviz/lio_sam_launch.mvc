@@ -1,0 +1,86 @@
+capture_directory: "~"
+fixed_frame: odom
+target_frame: base_link
+fix_orientation: false
+rotate_90: false
+enable_antialiasing: true
+show_displays: true
+show_status_bar: true
+show_capture_tools: true
+window_width: 1440
+window_height: 661
+view_scale: 0.486088395
+offset_x: 0
+offset_y: 0
+use_latest_transforms: true
+background: "#a0a0a4"
+image_transport: raw
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      custom_sources:
+        []
+      bing_api_key: AjUIFVHQqwaefdwfh3-uLRJViDFU8O798TvavTQtk4nDfDvtAn_Fc18EWXkDB4M2
+      source: Bing Maps (terrain)
+  - type: mapviz_plugins/point_click_publisher
+    name: new display
+    config:
+      visible: false
+      collapsed: true
+      topic: clicked_point
+      output_frame: wgs84
+  - type: mapviz_plugins/tf_frame
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      frame: base_link
+      color: "#ff0004"
+      draw_style: arrows
+      position_tolerance: 0
+      buffer_size: 10
+      static_arrow_sizes: true
+      arrow_size: 56
+  - type: mapviz_plugins/odometry
+    name: gps_odometry
+    config:
+      visible: true
+      collapsed: true
+      topic: /odometry/gps
+      color: "#ffff00"
+      draw_style: lines
+      position_tolerance: 0.5
+      buffer_size: 10000
+      show_laps: false
+      show_covariance: false
+      show_all_covariances: false
+      static_arrow_sizes: false
+      arrow_size: 25
+      show_timestamps: 0
+  - type: mapviz_plugins/pointcloud2
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /lio_sam/mapping/cloud_registered
+      size: 1
+      buffer_size: 1
+      alpha: 1
+      color_transformer: intensity
+      min_color: "#aaff00"
+      max_color: "#000000"
+      value_min: 0
+      value_max: 100
+      use_rainbow: true
+      use_automaxmin: true
+      unpack_rgb: false
+  - type: mapviz_plugins/path
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /lio_sam/mapping/path
+      color: "#00ff00"

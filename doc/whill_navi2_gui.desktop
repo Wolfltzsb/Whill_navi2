@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Whill Navi2 Gui
+Comment=Run WhillNavi2Gui
+Exec=bash -c $HOME/.local/etc/WhillNavi2Gui/GuiScript.bash
+Icon=/usr/share/icons/gnome/256x256/emotes/face-angry.png
+Terminal=true  # Set to true if you want it to run in a terminal
+Type=Application

@@ -1,0 +1,68 @@
+globalmap_server_node:
+  ros__parameters:
+    globalmap_pcd: ""
+    convert_utm_to_local: False
+    # downsample_resolution: 0.1
+    downsample_resolution: 0.1
+
+hdl_localization_node:
+  ros__parameters:
+    odom_child_frame_id: "base_link"
+    robot_odom_frame_id: "odom"
+    # use_imu: False
+    use_imu: True
+    send_tf_transforms: True
+    invert_acc: False
+    invert_gyro: False
+    # cool_time_duration: 2.0
+    cool_time_duration: 2.0
+    enable_robot_odometry_prediction: False
+    # enable_robot_odometry_prediction: True
+    use_global_localization: True
+    # Registration Method Setting
+    # available reg_methods: NDT_OMP, NDT_CUDA_P2D, NDT_CUDA_D2D
+    # reg_method: "NDT_OMP"
+    reg_method: "NDT_CUDA_D2D"
+    # Nearest Search Method
+    # if the reg_method is NDT_OMP, available ndt_neighbor_search_method: DIRECT1/7/21, KDTREE
+    # otherwise, ndt_neighbor_search_method: DIRECT1/7/27, DIRECT_RADIUS
+    # ndt_neighbor_search_method: "DIRECT7"
+    ndt_neighbor_search_method: "DIRECT7"
+    ndt_neighbor_search_radius: 2.0
+    # ndt_resolution: 1.0
+    ndt_resolution: 0.5
+    # downsample_resolution: 0.1
+    downsample_resolution: 0.1
+    # if "specify_init_pose" is true, pose estimator will be initialized with the following params
+    # otherwise, you need to input an initial pose with "2D Pose Estimate" on rviz"
+    specify_init_pose: True
+    init_pos_x: 0.0
+    init_pos_y: 0.0
+    init_pos_z: 0.0
+    init_ori_w: 1.0
+    init_ori_x: 0.0
+    init_ori_y: 0.0
+    init_ori_z: 0.0
+
+    use_sim_time: False
+
+hdl_global_localization_node:
+  ros__parameters:
+    # engine_name
+    engine_name_used: "BBS"
+
+    # BBS parameter config path
+    config_path : ""
+
+    # FPFH_RANSAC Parameters
+    # fpfh/normal_estimation_radius : 2.0
+    # fpfh/search_radius : 8.0
+    fpfh/normal_estimation_radius : 0.5
+    fpfh/search_radius : 2.0
+    voxel_based ransac/voxel_based : true
+    ransac/max_correspondence_distance : 1.0
+    ransac/similarity_threshold : 0.5
+    ransac/correspondence_randomness : 2
+    ransac/max_iterations : 100000
+    ransac/matching_budget : 10000
+    ransac/min_inlier_fraction : 0.25

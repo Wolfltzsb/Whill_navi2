@@ -1,0 +1,113 @@
+capture_directory: "~"
+fixed_frame: map
+target_frame: map
+fix_orientation: false
+rotate_90: false
+enable_antialiasing: true
+show_displays: true
+show_status_bar: true
+show_capture_tools: true
+window_width: 1920
+window_height: 894
+view_scale: 0.276184112
+offset_x: -27.555727
+offset_y: -2.8494947
+use_latest_transforms: true
+background: "#a0a0a4"
+image_transport: raw
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      custom_sources:
+        []
+      bing_api_key: AjUIFVHQqwaefdwfh3-uLRJViDFU8O798TvavTQtk4nDfDvtAn_Fc18EWXkDB4M2
+      source: Bing Maps (terrain)
+  - type: mapviz_plugins/tf_frame
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      frame: base_link
+      color: "#00ff00"
+      draw_style: arrows
+      position_tolerance: 0
+      buffer_size: 10
+      static_arrow_sizes: true
+      arrow_size: 50
+  - type: mapviz_plugins/marker
+    name: new display
+    config:
+      visible: true
+      collapsed: true
+      topic: /waypoint_marker
+  - type: mapviz_plugins/navsat
+    name: raw_navsat_fix
+    config:
+      visible: true
+      collapsed: true
+      topic: ublox/fix
+      color: "#55ffff"
+      draw_style: lines
+      position_tolerance: 0.5
+      buffer_size: 10000
+  - type: mapviz_plugins/navsat
+    name: filtered_navsat_fix
+    config:
+      visible: true
+      collapsed: true
+      topic: gps/filtered
+      color: "#000000"
+      draw_style: lines
+      position_tolerance: 0.5
+      buffer_size: 10000
+  - type: mapviz_plugins/odometry
+    name: local_odometry
+    config:
+      visible: true
+      collapsed: true
+      topic: odometry/filtered/local
+      color: "#00ff00"
+      draw_style: lines
+      position_tolerance: 0.5
+      buffer_size: 10000
+      show_laps: false
+      show_covariance: false
+      show_all_covariances: false
+      static_arrow_sizes: false
+      arrow_size: 25
+      show_timestamps: 0
+  - type: mapviz_plugins/odometry
+    name: gps_odometry
+    config:
+      visible: true
+      collapsed: true
+      topic: odometry/gps
+      color: "#ffff00"
+      draw_style: lines
+      position_tolerance: 0.5
+      buffer_size: 10000
+      show_laps: false
+      show_covariance: false
+      show_all_covariances: false
+      static_arrow_sizes: false
+      arrow_size: 25
+      show_timestamps: 0
+  - type: mapviz_plugins/odometry
+    name: global_odometry
+    config:
+      visible: true
+      collapsed: true
+      topic: odometry/filtered/global
+      color: "#ff00ff"
+      draw_style: lines
+      position_tolerance: 0.5
+      buffer_size: 10000
+      show_laps: false
+      show_covariance: false
+      show_all_covariances: false
+      static_arrow_sizes: false
+      arrow_size: 25
+      show_timestamps: 0

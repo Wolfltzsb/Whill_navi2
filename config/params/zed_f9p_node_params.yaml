@@ -1,0 +1,17 @@
+ntrip_client_node:
+  ros__parameters:
+    check_gga: true
+    debug: false
+    host_url: ntrip.ales-corp.co.jp
+    mountpoint: 32M4NHS
+    password: bh2ket
+    port: 2101
+    username: 8wna5x52
+
+ublox/zed_f9p_node:
+  ros__parameters:
+    serial: /dev/kuaro/ttyUSBUblox
+    baud: 460800
+    use_rtk: true
+    debug: false
+    frame_id: ublox

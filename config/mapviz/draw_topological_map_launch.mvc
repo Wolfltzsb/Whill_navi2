@@ -1,0 +1,42 @@
+capture_directory: "~"
+fixed_frame: map
+target_frame: map
+fix_orientation: false
+rotate_90: false
+enable_antialiasing: true
+show_displays: true
+show_status_bar: true
+show_capture_tools: true
+window_width: 1658
+window_height: 1016
+view_scale: 0.564473748
+offset_x: -55.0469894
+offset_y: -4.65194941
+use_latest_transforms: true
+background: "#a0a0a4"
+image_transport: raw
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      custom_sources:
+        []
+      bing_api_key: AjUIFVHQqwaefdwfh3-uLRJViDFU8O798TvavTQtk4nDfDvtAn_Fc18EWXkDB4M2
+      source: Bing Maps (terrain)
+  - type: mapviz_plugins/draw_polygon
+    name: draw_topological_map
+    config:
+      visible: true
+      collapsed: false
+      frame: wgs84
+      polygon_topic: topological_map
+      color: "#09fffa"
+  - type: mapviz_plugins/coordinate_picker
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      frame: wgs84
+      copy: false

@@ -1,0 +1,18 @@
+make_dir_node:
+  ros__parameters:
+    place_dir: rinpu
+    date_dir: "2024_10_8"
+    bag_dir: bag
+    map_dir: map
+    remap_dir: remap
+    pcd_map_dir: pcd
+    waypoint_dir: waypoint
+    rewaypoint_dir: rewaypoint
+    topological_waypoint_dir: topological
+    branchpoint_dir: branchpoint
+    bag_name: LioVioGnssOdometry
+    map_name: map
+    remap_name: remap
+    waypoint_name: waypoint.yaml
+    rewaypoint_name: rewaypoint.yaml
+    topological_waypoint_name: topological.yaml
